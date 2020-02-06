@@ -1,0 +1,80 @@
+screen.set:
+
+screen = pygame.display.set_mode(r=(width,height),flag=0)
+flags->styles of screen:
+pygame.RESIZABLE #da xiao ke tiao
+pygame.NOFRAME #wu bian kuang
+pygame.FULLSCREEN #quan pin
+
+vInfo = pygame.display.Info()
+width,height = vInfo.current_w,vInfo.current_h
+
+event.type == pygame.VIDEORESIZE:
+size = (width,height) = (event.w,event.h)
+
+pygame.display.set_caption(title,icontitle=None):
+#icontitle is the small title.
+
+pygame.display.get_caption():
+return (title,icontitle)
+
+pygame.display.set_icon(surface):
+icon = pygame.image.load("abc,jpg")
+pygame.display.set_icon(icon)
+
+pygame.display.flip():
+draw all the screen;
+
+pygame.display.get_active():
+select if the screen is active,if it's the smallest,it return False,else it return True
+
+event:
+
+pygame.event.MOUSEMOTION: #yi dong
+event.pos #(x,y)
+event.rel #(X,Y) xiang dui ju li
+event.buttons #left central right-> 1 or 0
+
+pygame.event.MOUSEBUTTONUP:
+event.pos #(x,y)
+event.button #left->0,central->1,right->2
+
+pygame.event.MOUSEBUTTONDOWN:
+event.pos #(x,y)
+event.button #left->0,central->1,right->2
+
+pygame.event.KEYDOWN:
+event.unicode#bu tui jian
+event.key
+event.mod
+
+pygame.event.KEYUP:
+event.key
+event.mod
+
+pygame.event.get(type)
+pygame.event.poll()#get unique event
+pygame.event.clear(type)#delete all events
+
+pygame.event.set_blocked(type)#block type
+pygame.event.set_allowed(type)#allow type
+pygame.event.get_blocked(type)#selecte if event is blocked
+
+pygame.event.post(event)#create a event
+pygame.event.Event(type.dict):
+uevent = pygame.event.Event(pygame.KEYDOWN,{'unicode':123,'key':pygame.K_SPACE,'mod':pygame.KMOD_ALT})
+pygame.event.post(uevent)
+
+color:
+pygame.Color:
+Color(name) eg:Color("grey")
+Color(r,g,b,a) eg:Color(190,190,190,255)
+Color(rgbvalur) eg:Color("BEBEBEFF")
+pygame.Color.r->red
+pygame.Color.g->green
+------------.b->blue
+------------.a->value of alpha
+
+pygame.draw.rect()/circle()/elipse()/polygon()...
+pygame.Rect().x/y/left/right/top/bottom/...
+pygame.draw.rect(Surface,color,Rect,width=0)

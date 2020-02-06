@@ -1,0 +1,24 @@
+import pygame
+
+class Settings():
+    def __init__(self):
+        self.screen_mode = (1200,800)
+        self.game_name = "snake"
+        self.clock = pygame.time.Clock()
+        self.fps = 10
+        self.screen_color = (230,230,230)
+        self.body_width = 30
+        self.body_height = 30
+        self.body_color = (255,0,0)
+        self.egg_width = 30
+        self.egg_height = 30
+        self.egg_color = (0,100,255)
+        self.text_color = (0,0,0)
+        self.button_color = (0,255,0)
+        self.button_text_size = 50
+        self.button_width = 200
+        self.button_height = 55
+        self.score_text_size = 50
+        self.score_color = (30,30,30)
+        self.font_style = None
+        self.body_limit_init = 5

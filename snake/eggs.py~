@@ -1,0 +1,8 @@
+import pygame
+import random
+
+class Eggs():
+    def __init__(self,screen,settings):
+        self.screen = screen
+        self.color = (0,0,255)
+        self.rect = pygame.Rect(random.randint(settings.screen_mode),random.randint(settings.screen_mode),settings.egg_width,settings,egg_height)

@@ -1,0 +1,15 @@
+class Buttons():
+    def __init__(self,msg,screen,settings):
+        self.screen = screen
+        self.screen_rect = self.screen.get_rect()
+        self.text_color = settings.text_color
+        self.button_color = settings.button_color
+        self.button_width = settings.button_width
+        self.button_height = settings.button_height
+        self.font = pygame.font.SysFont(None,settings.text_size)
+        self.rect = pygame.Rect(0,0,self.button_width,self.button_height)
+    def prep_msg(self,msg):
+        self.msg_image = self.font.render(msg,True,self.text_color,self.button_color)
+        self.mag_image_rect = self.msg_image.get_rect()
+        self.msg_image_rect.center = self.screen_rect.center
+        

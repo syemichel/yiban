@@ -1,0 +1,13 @@
+import pygame
+from pygame.sprite import Sprite
+
+class body(Sprite):
+    def __init__(self,settings,screen):
+        super().__init__()
+        self.screen = screen
+        self.rect = pygame.Rect(0,0,settings.body_width,settings.body_height)
+        self.rect.center = self.screen.center
+        self.color = settings.body_color
+
+    def draw_body(self):
+        pygame.draw.rect(self.screen,self.color,self.rect)
